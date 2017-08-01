@@ -1,0 +1,2 @@
+class BestBeer < ApplicationRecord
+end

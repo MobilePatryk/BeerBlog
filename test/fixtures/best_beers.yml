@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  beer: MyString
+  alcohol: 1.5
+  points: 1
+  type: 
+
+two:
+  beer: MyString
+  alcohol: 1.5
+  points: 1
+  type: 
