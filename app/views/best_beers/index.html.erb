@@ -8,7 +8,7 @@
       <th>Beer</th>
       <th>Alcohol</th>
       <th>Points</th>
-      <th>Type</th>
+      <th>Beer type</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -19,7 +19,7 @@
         <td><%= best_beer.beer %></td>
         <td><%= best_beer.alcohol %></td>
         <td><%= best_beer.points %></td>
-        <td><%= best_beer.type %></td>
+        <td><%= best_beer.beer_type %></td>
         <td><%= link_to 'Show', best_beer %></td>
         <td><%= link_to 'Edit', edit_best_beer_path(best_beer) %></td>
         <td><%= link_to 'Destroy', best_beer, method: :delete, data: { confirm: 'Are you sure?' } %></td>

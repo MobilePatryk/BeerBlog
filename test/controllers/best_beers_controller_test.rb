@@ -17,7 +17,7 @@ class BestBeersControllerTest < ActionDispatch::IntegrationTest
 
   test "should create best_beer" do
     assert_difference('BestBeer.count') do
-      post best_beers_url, params: { best_beer: { alcohol: @best_beer.alcohol, beer: @best_beer.beer, points: @best_beer.points, type: @best_beer.type } }
+      post best_beers_url, params: { best_beer: { alcohol: @best_beer.alcohol, beer: @best_beer.beer, beer_type: @best_beer.beer_type, points: @best_beer.points } }
     end
 
     assert_redirected_to best_beer_url(BestBeer.last)
@@ -34,7 +34,7 @@ class BestBeersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update best_beer" do
-    patch best_beer_url(@best_beer), params: { best_beer: { alcohol: @best_beer.alcohol, beer: @best_beer.beer, points: @best_beer.points, type: @best_beer.type } }
+    patch best_beer_url(@best_beer), params: { best_beer: { alcohol: @best_beer.alcohol, beer: @best_beer.beer, beer_type: @best_beer.beer_type, points: @best_beer.points } }
     assert_redirected_to best_beer_url(@best_beer)
   end
 

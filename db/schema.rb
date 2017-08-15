@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170801104835) do
+ActiveRecord::Schema.define(version: 20170815201134) do
 
-  create_table "best_beers", force: :cascade do |t|
-    t.string "beer"
-    t.float "alcohol"
-    t.integer "points"
-    t.string "beer_type"
+  create_table "beers", force: :cascade do |t|
+    t.string "name"
+    t.string "type"
+    t.string "country"
+    t.float "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

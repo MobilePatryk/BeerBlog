@@ -4,10 +4,10 @@ one:
   beer: MyString
   alcohol: 1.5
   points: 1
-  type: 
+  beer_type: MyString
 
 two:
   beer: MyString
   alcohol: 1.5
   points: 1
-  type: 
+  beer_type: MyString
