@@ -1,2 +1,15 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.center {
+	text-align: center;
+}
+
+#logo {
+	width:48px;
+	height:48px;
+	background-image: url("https://static.skillshare.com/uploads/project/e053807898f6a9de77d2a0b56ae20050/b3e2f72e");
+}
+.navbar-brand {
+	padding:0px;
+}

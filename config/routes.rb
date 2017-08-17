@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :comments
+  resources :users
+  get 'welcome/home'
+
 	root 'beers#index'
   resources :beers
   resources :best_beers
