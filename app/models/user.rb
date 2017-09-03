@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+	has_many :beers
+	before_save {self.email = email.downcase}
 	has_many :comments, dependent: :destroy 
 	validates :username, presence: true, 
 	uniqueness: {case_sensitive:false},
