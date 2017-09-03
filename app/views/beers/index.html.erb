@@ -20,6 +20,8 @@
         <td><%= beer.beer_type %></td>
         <td><%= beer.country %></td>
         <td><%= beer.price %></td>
+        <td>Added by: <%=beer.user.username if beer.user %>
+        <td><%= time_ago_in_words(beer.created_at) %> ago, last updated: <%= time_ago_in_words(beer.updated_at) %> ago </td>
         <td><%= link_to 'Show', beer %></td>
         <td><%= link_to 'Edit', edit_beer_path(beer) %></td>
         <td><%= link_to 'Destroy', beer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
