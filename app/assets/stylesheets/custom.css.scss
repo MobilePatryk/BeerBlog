@@ -6,10 +6,34 @@
 }
 
 #logo {
-	width:48px;
-	height:48px;
-	background-image: url("https://static.skillshare.com/uploads/project/e053807898f6a9de77d2a0b56ae20050/b3e2f72e");
+	height: 50px ;
+	width: 50px ;
 }
 .navbar-brand {
 	padding:0px;
+}
+.jumbotron{
+	background-image: asset-url('beer.jpg');
+	background-size: cover;
+	height:750px;
+	width:80%;
+	margin: auto;
+	color:grey;
+	text-align:center;
+	margin-bottom:30px;
+}
+
+.jumbotron h1{
+	border-color:black;
+}
+.btn.btn-primary.btn-lg
+{
+	color:black;
+}
+.jumbotron p{
+	color:#33CCFF;
+}
+.btn-xlarge{
+	font-size: 1.7em;
+
 }

@@ -19,6 +19,7 @@ gem 'bcrypt', '~> 3.1.7'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 gem 'bootstrap-sass', '~> 3.3.6'
+gem 'nokogiri', '~> 1.6', '>= 1.6.6.2'
 
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
