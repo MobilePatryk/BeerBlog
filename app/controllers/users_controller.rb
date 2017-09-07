@@ -3,6 +3,7 @@ class UsersController < ApplicationController
     @user = User.new
   end
   def create
+    @ip = request.remote_ip
     @user = User.new(user_params)
     if @user.save
       flash[:succes] = "Welcome to BeerBlog #{@user.username}"
