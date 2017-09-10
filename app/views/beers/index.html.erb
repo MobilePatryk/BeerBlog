@@ -1,30 +1,5 @@
 <h1 align="center">Beers</h1>
 
 
-<% @beers.each do |beer| %>
-<div class="row">
-  <div class="col-xs-4 col-xs-offset-4">
-    <div class="well well-lg">
-      <div class="beer-name">
-        <%= link_to beer.name, beer_path(beer) %>
-      </div>
-      <div class="beer-type">
-        <%= beer.beer_type %> 
-      </div>
-      <div class="beer-country">
-        <%= beer.country %>
-      </div>
-      <div class="beer-price">
-      <%= simple_format(number_to_currency(beer.price, locale: :pl,strip_insignificant_zeros: false)) %>
-      </div>
-      <div class="article-actions">
-        <%= link_to 'Edit this beer', edit_beer_path(beer), class: "btn btn-xs btn-primary" %> 
-        <%= link_to "Delete this beer", beer_path(beer), method: :delete,
-        data: {confirm: "Are You sure?"}, 
-        class: "btn btn-xs btn-danger" %>
-      </div>
-    </div>
-  </div>
-</div>
-<% end %>
+<%= render 'beer', obj: @beers %>
 

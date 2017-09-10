@@ -1,5 +1,5 @@
 module ApplicationHelper
-	def avatar_for(user)
+	def avatar_for(user, options = {size: 20})
 		require 'open-uri'
 		require 'nokogiri'
 		#debugger
@@ -14,7 +14,7 @@ module ApplicationHelper
 		else
 			"https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Beer_mug.svg/1024px-Beer_mug.svg.png"
 		end
-		image_tag(user.avatar, alt: user.username, class: "img-circle", size: "16", id: "avatar")
+		image_tag(user.avatar, alt: user.username, class: "img-circle", size: size, id: "avatar")
 		user.save
 		end
 	end
