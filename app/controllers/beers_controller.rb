@@ -27,7 +27,7 @@ class BeersController < ApplicationController
   def create
     @beer = Beer.new(beer_params)
     @beer.user = User.first
-
+    
     respond_to do |format|
       if @beer.save
         format.html { redirect_to @beer, notice: 'Beer was successfully created.' }
