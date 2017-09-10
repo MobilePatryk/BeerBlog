@@ -1,35 +1,30 @@
-<p id="notice"><%= notice %></p>
+<h1 align="center">Beers</h1>
 
-<h1 allign="center">Beers</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name |</th>
-      <th>Type |</th>
-      <th>Country |</th>
-      <th>Price |</th>
-      <th colspan="4"></th>
-    </tr>
-  </thead>
+<% @beers.each do |beer| %>
+<div class="row">
+  <div class="col-xs-4 col-xs-offset-4">
+    <div class="well well-lg">
+      <div class="beer-name">
+        <%= link_to beer.name, beer_path(beer) %>
+      </div>
+      <div class="beer-type">
+        <%= beer.beer_type %> 
+      </div>
+      <div class="beer-country">
+        <%= beer.country %>
+      </div>
+      <div class="beer-price">
+      <%= simple_format(number_to_currency(beer.price, locale: :pl,strip_insignificant_zeros: false)) %>
+      </div>
+      <div class="article-actions">
+        <%= link_to 'Edit this beer', edit_beer_path(beer), class: "btn btn-xs btn-primary" %> 
+        <%= link_to "Delete this beer", beer_path(beer), method: :delete,
+        data: {confirm: "Are You sure?"}, 
+        class: "btn btn-xs btn-danger" %>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
 
-  <tbody>
-    <% @beers.each do |beer| %>
-      <tr>
-        <td><%= beer.name %></td>
-        <td><%= beer.beer_type %></td>
-        <td><%= beer.country %></td>
-        <td><%= number_to_currency(beer.price,locale: :pl, precision: 2,strip_insignificant_zeros: false) %></td>
-        <td>Added by: <%=beer.user.username if beer.user %>
-        <td><%= time_ago_in_words(beer.created_at) %> ago, last updated: <%= time_ago_in_words(beer.updated_at) %> ago </td>
-        <td><%= link_to 'Show', beer %></td>
-        <td><%= link_to 'Edit', edit_beer_path(beer) %></td>
-        <td><%= link_to 'Destroy', beer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Beer', new_beer_path %>
