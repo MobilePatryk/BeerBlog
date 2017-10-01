@@ -1,6 +1,7 @@
 class BeersController < ApplicationController
   before_action :set_beer, only: [:show, :edit, :update, :destroy]
-
+  before_action :require_user, except: [:index, :show]
+  before_action :require_same_user, only: [:edit, :update, :destroy]
   # GET /beers
   # GET /beers.json
   def index
@@ -27,7 +28,7 @@ class BeersController < ApplicationController
   # POST /beers.json
   def create
     @beer = Beer.new(beer_params)
-    @beer.user = User.first
+    @beer.user = current_user
     
     respond_to do |format|
       if @beer.save
@@ -73,5 +74,12 @@ class BeersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def beer_params
       params.require(:beer).permit(:name, :beer_type, :country, :price)
+    end
+
+    def require_same_user
+      if current_user != @beer.user
+        flash[:danger] = "You can only edit or delete your own beer"
+        redirect_to beers_path
+      end
     end
 end

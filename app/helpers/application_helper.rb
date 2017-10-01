@@ -14,8 +14,8 @@ module ApplicationHelper
 		else
 			"https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Beer_mug.svg/1024px-Beer_mug.svg.png"
 		end
-		image_tag(user.avatar, alt: user.username, class: "img-circle", size: size, id: "avatar")
 		user.save
+		image_tag(user.avatar, alt: user.username, class: "img-circle", size: size, id: "avatar")
 		end
 	end
 end
