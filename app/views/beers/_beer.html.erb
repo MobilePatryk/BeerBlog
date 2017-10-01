@@ -22,7 +22,7 @@
 
 
 </div>
-      <% if logged_in? && current_user = beer.user %>
+      <% if logged_in? && current_user == beer.user %>
         <div class="article-actions">
           <%= link_to 'Edit this beer', edit_beer_path(beer), class: "btn btn-xs btn-primary" %> 
           <%= link_to "Delete this beer", beer_path(beer), method: :delete,

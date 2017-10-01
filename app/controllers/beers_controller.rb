@@ -32,7 +32,8 @@ class BeersController < ApplicationController
     
     respond_to do |format|
       if @beer.save
-        format.html { redirect_to @beer, notice: 'Beer was successfully created.' }
+        flash[:success] = "Beer was successfully added"
+        format.html { redirect_to @beer }
         format.json { render :show, status: :created, location: @beer }
       else
         format.html { render :new }
@@ -46,6 +47,7 @@ class BeersController < ApplicationController
   def update
     respond_to do |format|
       if @beer.update(beer_params)
+        flash[:success] = "Beer was successfully updated"
         format.html { redirect_to @beer, notice: 'Beer was successfully updated.' }
         format.json { render :show, status: :ok, location: @beer }
       else
@@ -59,8 +61,9 @@ class BeersController < ApplicationController
   # DELETE /beers/1.json
   def destroy
     @beer.destroy
+    flash[:danger] = "Beer was successfully destroyed"
     respond_to do |format|
-      format.html { redirect_to beers_url, notice: 'Beer was successfully destroyed.' }
+      format.html { redirect_to beers_url }
       format.json { head :no_content }
     end
   end
