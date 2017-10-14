@@ -1,6 +1,8 @@
 module UsersHelper
 	include HTTParty
 		def localization(ip)
-			loc = HTTParty.get('https://freegeoip.net/json/192.0.0.1')
+			base_uri = 'https://freegeoip.net/json/'
+			path = ip.to_s
+			loc = HTTParty.get(base_uri+path)
 		end
 end

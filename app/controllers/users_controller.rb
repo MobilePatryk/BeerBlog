@@ -10,10 +10,12 @@ class UsersController < ApplicationController
   end
   def create
     @ip = request.remote_ip
+    debugger
     @user = User.new(user_params)
     if @user.save
+      session[:user_id] = @user.id
       flash[:succes] = "Welcome to BeerBlog #{@user.username}"
-      redirect_to beers_path
+      redirect_to user_path(@user)  
     else
       render 'new'
     end
