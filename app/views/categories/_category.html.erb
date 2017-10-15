@@ -1,0 +1,11 @@
+<% obj.each do |category| %>
+<div class="row">
+  <div class="col-xs-4 col-xs-offset-4 ">
+    <div class="well well-lg">
+      <div class="category-name">
+        <%= link_to category.name, category_path(category) %>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>

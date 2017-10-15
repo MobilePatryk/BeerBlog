@@ -1,2 +1,0 @@
-class BeerTypeController < ApplicationController
-end

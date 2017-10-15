@@ -15,7 +15,6 @@ class BeersController < ApplicationController
 
   # GET /beers/new
   def new
-    @type = BeerType.all
     @beer = Beer.new
 
   end
