@@ -38,7 +38,15 @@
         <%= form.text_field :price, id: :beer_price, class: "form-control", placeholder:"The price of Your beer" %>
       </div>
     </div>
-
+<div class="form-group">
+      <div class="row">
+        <div class="col-sm-offset-2 col-sm-10">
+          <%= form.collection_check_boxes :category_ids, Category.all, :id, :name do|cb| %>
+            <% cb.label(class: "checkbox-inline input_checkbox") {cb.check_box(class: "checkbox") + cb.text} %>
+          <% end %>
+        </div>
+      </div>
+    </div>
     <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
       <%= form.submit class: "btn btn-primary btn-lg" %>

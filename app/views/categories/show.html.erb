@@ -1,10 +1,8 @@
-<h2 align="center">Name: <%= @category.name %></h2>
-<div class="well col-xs-8 col-xs-offset-2">
-	
+<h1 align="center"><%= "Category : " + @category.name %></h1>
+<div align="center">
+</div>
+<%= render 'beers/beer', obj: @category.beers %>
+<div align="center">
+</div>
 
-</div>
-	<div class="article-actions">
-		<%= link_to 'Edit this category', edit_category_path(@category), class: "btn btn-xs btn-primary" %> 
-		<%= link_to 'View all cateogries', categories_path, class: "btn btn-xs btn-success" %>
-	</div>
-</div>
+

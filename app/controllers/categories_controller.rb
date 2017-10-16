@@ -16,6 +16,13 @@ class CategoriesController < ApplicationController
   	else
   		render 'new'
   	end
+
+    def show
+      @category = Category.find(params[:id])
+      @category_articles = @category.beers.paginate(page: params[:page],per_page: 5)
+    end
+
+
   end
 
 private

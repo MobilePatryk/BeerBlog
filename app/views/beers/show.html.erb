@@ -8,6 +8,9 @@
 
 	<h4 class="center"><strong>Price:</strong></h4>
 	<hr><%= simple_format(number_to_currency(@beer.price, locale: :pl,strip_insignificant_zeros: false))%>
+	<% if @beer.categories.any? %>
+	 <p>Categories: <%= render @beer.categories %></p>
+	<% end %>
 
 	<div class="article-actions">
 		<%= link_to 'Edit this beer', edit_beer_path(@beer), class: "btn btn-xs btn-primary" %> 
